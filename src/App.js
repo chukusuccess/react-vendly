@@ -4,7 +4,7 @@ import "./App.css";
 
 import { UserLayout } from "./components/userLayout/userLayout.compnent";
 import { ProductPage } from "./components/products/products";
-import { CreateProduct } from "./components/create-product/create-product";
+import CreateProduct from "./components/create-product/CreateProduct";
 
 const App = () => {
   return (

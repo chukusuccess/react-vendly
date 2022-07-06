@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "antd/dist/antd.less";
-import "./index.less";
+// import "antd/dist/antd.less";
+// import "./index.less";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
