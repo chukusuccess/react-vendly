@@ -9,7 +9,7 @@ export const ProductPage = () => {
         title="Products"
         bordered={false}
         style={{
-          width: "83vw",
+          width: "100%",
           margin: "5px",
           height: "88vh",
           overflow: "hidden",
