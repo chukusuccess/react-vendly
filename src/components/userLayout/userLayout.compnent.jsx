@@ -1,40 +1,98 @@
-import { Layout } from "antd";
+import {
+  UserOutlined,
+  ShoppingOutlined,
+  AccountBookOutlined,
+  LineChartOutlined,
+  QuestionCircleOutlined,
+  LoginOutlined,
+  MailOutlined,
+  FileSearchOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
+import { Layout, Avatar, Menu, Input, Button } from "antd";
 import React from "react";
-const { Header, Footer, Sider, Content } = Layout;
+import { Outlet } from "react-router-dom";
 
-export const UserLayout = () => (
-  <>
-    <Layout>
-      <Header>Header</Header>
-      <Content>Content</Content>
-      <Footer>Footer</Footer>
-    </Layout>
+import "./userLayout.styles.less";
+const { Header, Sider, Content } = Layout;
+const { Item, SubMenu } = Menu;
 
+export const UserLayout = () => {
+  return (
     <Layout>
-      <Header>Header</Header>
+      <Sider
+        style={{
+          backgroundColor: "white",
+          height: "100vh",
+          boxShadow: "0px 0px 8px 2px rgba(7, 7, 136, 0.08)",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "48px",
+          }}
+        >
+          <Avatar size={100} icon={<UserOutlined />} />
+          <h1 style={{ textAlign: "center", fontSize: "24px" }}>
+            Tronix Africa
+          </h1>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            borderBottom: "1px solid rgba(222, 222, 222, 0.98)",
+          }}
+        >
+          <p icon={<UserOutlined />}>20</p>
+          <p icon={<UserOutlined />}>200</p>
+        </div>
+        <div>
+          <Menu mode="inline" defaultSelectedKeys={1}>
+            <Item icon={<ShoppingOutlined />} key={1}>
+              Product
+            </Item>
+            <Item icon={<AccountBookOutlined />}>Account</Item>
+            <Item icon={<LineChartOutlined />}>Insight</Item>
+            <SubMenu title="Help & Feedback" icon={<QuestionCircleOutlined />}>
+              <Item icon={<MailOutlined />}>Contact us</Item>
+              <Item icon={<FileSearchOutlined />}>FAQ</Item>
+            </SubMenu>
+            <Item icon={<LoginOutlined />}>Log out</Item>
+          </Menu>
+        </div>
+      </Sider>
       <Layout>
-        <Sider>Sider</Sider>
-        <Content>Content</Content>
+        <Header
+          style={{
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <Input
+              size="large"
+              placeholder="Search products"
+              prefix={<SearchOutlined />}
+            />
+          </div>
+          <div>
+            <Button type="primary">Create Product</Button>
+          </div>
+        </Header>
+        <Content>
+          <div>
+            <Outlet />
+          </div>
+        </Content>
       </Layout>
-      <Footer>Footer</Footer>
     </Layout>
-
-    <Layout>
-      <Header>Header</Header>
-      <Layout>
-        <Content>Content</Content>
-        <Sider>Sider</Sider>
-      </Layout>
-      <Footer>Footer</Footer>
-    </Layout>
-
-    <Layout>
-      <Sider>Sider</Sider>
-      <Layout>
-        <Header>Header</Header>
-        <Content>Content</Content>
-        <Footer>Footer</Footer>
-      </Layout>
-    </Layout>
-  </>
-);
+  );
+};
