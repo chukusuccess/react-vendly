@@ -4,6 +4,7 @@ import "./App.css";
 
 import { UserLayout } from "./components/userLayout/userLayout.compnent";
 import { ProductPage } from "./components/products/products";
+import { CreateProduct } from "./components/create-product/create-product";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Route path="/" element={<UserLayout />}>
         {/* nest other routes in here */}
         <Route path="/products" element={<ProductPage />} />
+        <Route path="/create-products" element={<CreateProduct />} />
       </Route>
     </Routes>
   );
