@@ -1,23 +1,18 @@
 import { Routes, Route } from "react-router-dom";
+import BuyerProductDetails from './component/buyer/BuyerProductDetails'
+import OrderSummary from "./component/buyer/OrderSummary";
+import OrderSummaryContact from "./component/buyer/OrderSummaryContact";
 
-import "./App.css";
-
-import { UserLayout } from "./components/userLayout/userLayout.compnent";
-import { ProductPage } from "./components/products/products";
-import { CreateProduct } from "./components/create-product/create-product";
-import { ProductDetails } from "./components/product-details/product-details";
-
-const App = () => {
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<UserLayout />}>
-        {/* nest other routes in here */}
-        <Route path="/products" element={<ProductPage />} />
-        <Route path="/create-products" element={<CreateProduct />} />
-        <Route path="/product-details" element={<ProductDetails />} />
-      </Route>
-    </Routes>
+    <div>
+        <Routes>
+          <Route path="precious/product/:id" element={<BuyerProductDetails/>} />
+          <Route path="/order_summary_delivery" element={<OrderSummary/>} />
+          <Route path="/order_summary" element={<OrderSummaryContact/>} />
+        </Routes>
+    </div>
   );
-};
+}
 
 export default App;
