@@ -6,14 +6,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import ProductDetailsContextProvider from "./context/ProductDetailsContext";
+import ProductModalContextProvider from "./context/ProductModalContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductDetailsContextProvider>
-        <App />
-      </ProductDetailsContextProvider>
+      <ProductModalContextProvider>
+        <ProductDetailsContextProvider>
+          <App />
+        </ProductDetailsContextProvider>
+      </ProductModalContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

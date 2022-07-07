@@ -1,12 +1,24 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { ProductModalContext } from "../../context/ProductModalContext";
 import logo192 from "../../image/logo192.png";
 
 const Product = ({ product }) => {
+  const { modal, setModal } = useContext(ProductModalContext);
+  const navigate = useNavigate();
+
+  const productDetails = (id, comp) => {
+    if (comp === "details") navigate("/product-details");
+    setModal(true);
+  };
+
   return (
     <div className="relative max-w-[12rem] sm:max-w-[15rem] overflow-hidden rounded-lg shadow-lg font-Poppins sm:mx-2">
       {/* start product options icon */}
       <div
         style={{ background: "rgba(0, 0, 0, 0.100)" }}
         className="absolute px-2 py-1 sm:right-5 sm:top-2 right-2 top-2 rounded-md"
+        onClick={() => productDetails(1, "options")}
       >
         <svg
           className="w-4 h-4 text-white"
@@ -24,6 +36,7 @@ const Product = ({ product }) => {
         className="rounded-tr-lg rounded-tl-lg object-cover w-full h-48"
         src={logo192}
         alt="Flower and sky"
+        onClick={() => productDetails(1, "details")}
       />
       {/* end product image */}
 

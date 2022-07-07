@@ -11,7 +11,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Avatar, Menu, Button } from "antd"; //import Input when we are adding the search back
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import "./userLayout.styles.less";
 const { Header, Sider, Content } = Layout;
@@ -64,9 +64,13 @@ export const UserLayout = () => {
         <div>
           <Menu mode="inline" defaultSelectedKeys={1}>
             <Item icon={<ShoppingOutlined />} key={1}>
-              Product
+              <Link to="/products">Product</Link>
             </Item>
-            <Item icon={<AccountBookOutlined />}>Account</Item>
+
+            <Item icon={<AccountBookOutlined />}>
+              <Link to="/accounts">Account</Link>
+            </Item>
+
             <Item icon={<LineChartOutlined />}>Insight</Item>
             <SubMenu title="Help & Feedback" icon={<QuestionCircleOutlined />}>
               <Item icon={<MailOutlined />}>Contact us</Item>
@@ -94,7 +98,7 @@ export const UserLayout = () => {
           </div> */}
           <div>
             <Button type="primary" style={{ backgroundColor: "#0055D4" }}>
-              Create Product
+              <Link to="/addproduct">Create Product</Link>
             </Button>
           </div>
         </Header>
