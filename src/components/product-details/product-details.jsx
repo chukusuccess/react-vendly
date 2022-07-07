@@ -48,30 +48,6 @@ export const ProductDetails = () => {
               />
             }
           ></Card>
-          {/* <Card
-            style={{
-              width: 300,
-              border: "none",
-            }}
-            cover={
-              <img
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-            }
-          ></Card>
-          <Card
-            style={{
-              width: 300,
-              border: "none",
-            }}
-            cover={
-              <img
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-            }
-          ></Card> */}
         </div>
 
         <List
