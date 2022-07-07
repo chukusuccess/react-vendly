@@ -7,9 +7,9 @@ import {
   LoginOutlined,
   MailOutlined,
   FileSearchOutlined,
-  SearchOutlined,
+  // SearchOutlined,
 } from "@ant-design/icons";
-import { Layout, Avatar, Menu, Input, Button } from "antd";
+import { Layout, Avatar, Menu, Button } from "antd"; //import Input when we are adding the search back
 import React from "react";
 import { Outlet } from "react-router-dom";
 
@@ -19,12 +19,21 @@ const { Item, SubMenu } = Menu;
 
 export const UserLayout = () => {
   return (
-    <Layout>
+    <Layout style={{ minWidth: "100vw" }}>
       <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
         style={{
           backgroundColor: "white",
           height: "100vh",
-          boxShadow: "0px 0px 8px 2px rgba(7, 7, 136, 0.08)",
+          borderRight: "1px solid rgba(7, 7, 136, 0.08)",
+          // boxShadow: "0px 0px 8px 2px rgba(7, 7, 136, 0.08)",
         }}
       >
         <div
@@ -73,21 +82,23 @@ export const UserLayout = () => {
             backgroundColor: "white",
             display: "flex",
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "right",
           }}
         >
-          <div>
+          {/* <div>
             <Input
               size="large"
               placeholder="Search products"
               prefix={<SearchOutlined />}
             />
-          </div>
+          </div> */}
           <div>
-            <Button type="primary">Create Product</Button>
+            <Button type="primary" style={{ backgroundColor: "#0055D4" }}>
+              Create Product
+            </Button>
           </div>
         </Header>
-        <Content>
+        <Content style={{ backgroundColor: "white" }}>
           <div>
             <Outlet />
           </div>
