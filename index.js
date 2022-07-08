@@ -1,21 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "./index.less";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import ProductDetailsContextProvider from './context/ProductDetailsContext';
-import AuthContextProvider from './context/AuthContext';
+import ProductDetailsContextProvider from "./context/ProductDetailsContext";
+import ProductModalContextProvider from "./context/ProductModalContext";
+import AuthContextProvider from "./context/AuthContext";
+import UploadProductContextProvider from "./context/UploadProductContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ProductDetailsContextProvider>
+    <UploadProductContextProvider>
       <AuthContextProvider>
-        <App />
+        <ProductModalContextProvider>
+          <ProductDetailsContextProvider>
+            <App />
+          </ProductDetailsContextProvider>
+        </ProductModalContextProvider>
       </AuthContextProvider>
-    </ProductDetailsContextProvider>
+    </UploadProductContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

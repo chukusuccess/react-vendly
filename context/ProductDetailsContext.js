@@ -10,15 +10,6 @@ const ProductDetailsContextProvider = (props) => {
     })
 
     console.log('alkd', details.product.productName)
-   
-
-    // const addBook = (title, author) => { 
-    //     setBooks([...books, { title, author, id: Math.random()}])
-    // }
-
-    // const removeBook = (id) => {
-    //     setBooks(books.filter(book => book.id !== id))
-    // }
 
     return ( 
         <ProductDetailsContext.Provider value={{details, dispatch}}>
