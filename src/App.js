@@ -12,10 +12,10 @@ import { Login } from "./components/signUp/Login";
 import { AccountPage } from "./components/account/AccountPage";
 import CreateNewProduct from "./components/createproduct/CreateNewProduct";
 import EditProduct from "./components/createproduct/EditProduct";
-import { useState } from "react";
 import ProductModal from "./components/popupModals/ProductModal";
 import { useContext } from "react";
 import { ProductModalContext } from "./context/ProductModalContext";
+import { Welcome } from "./components/popupModals/Welcome";
 
 function App() {
   const { modal, setModal } = useContext(ProductModalContext);
@@ -38,6 +38,7 @@ function App() {
           <Route path="/addproduct" element={<CreateNewProduct />} />
           <Route path="/editproduct" element={<EditProduct />} />
           <Route path="/accounts" element={<AccountPage />} />
+          <Route path="/welcome" element={<Welcome />} />
         </Route>
         <Route path="precious/product/:id" element={<BuyerProductDetails />} />
         <Route path="/order_summary_delivery" element={<OrderSummary />} />

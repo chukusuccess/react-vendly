@@ -7,16 +7,22 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import ProductDetailsContextProvider from "./context/ProductDetailsContext";
 import ProductModalContextProvider from "./context/ProductModalContext";
+import AuthContextProvider from "./context/AuthContext";
+import UploadProductContextProvider from "./context/UploadProductContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductModalContextProvider>
-        <ProductDetailsContextProvider>
-          <App />
-        </ProductDetailsContextProvider>
-      </ProductModalContextProvider>
+      <UploadProductContextProvider>
+        <AuthContextProvider>
+          <ProductModalContextProvider>
+            <ProductDetailsContextProvider>
+              <App />
+            </ProductDetailsContextProvider>
+          </ProductModalContextProvider>
+        </AuthContextProvider>
+      </UploadProductContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

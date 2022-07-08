@@ -8,7 +8,10 @@ const Product = ({ product }) => {
   const navigate = useNavigate();
 
   const productDetails = (id, comp) => {
-    if (comp === "details") navigate("/product-details");
+    navigate("/product-details");
+  };
+
+  const productModal = () => {
     setModal(true);
   };
 
@@ -17,8 +20,8 @@ const Product = ({ product }) => {
       {/* start product options icon */}
       <div
         style={{ background: "rgba(0, 0, 0, 0.100)" }}
-        className="absolute px-2 py-1 sm:right-5 sm:top-2 right-2 top-2 rounded-md"
-        onClick={() => productDetails(1, "options")}
+        className="absolute px-2 py-1 sm:right-5 sm:top-2 right-2 top-2 rounded-md cursor-pointer"
+        onClick={productModal}
       >
         <svg
           className="w-4 h-4 text-white"
@@ -33,10 +36,10 @@ const Product = ({ product }) => {
 
       {/* start product image */}
       <img
-        className="rounded-tr-lg rounded-tl-lg object-cover w-full h-48"
+        className="rounded-tr-lg rounded-tl-lg object-cover w-full h-48 cursor-pointer"
         src={logo192}
         alt="Flower and sky"
-        onClick={() => productDetails(1, "details")}
+        onClick={productDetails}
       />
       {/* end product image */}
 

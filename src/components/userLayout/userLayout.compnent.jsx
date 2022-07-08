@@ -9,12 +9,12 @@ import {
   FileSearchOutlined,
   // SearchOutlined,
 } from "@ant-design/icons";
-import { Layout, Avatar, Menu, Button } from "antd"; //import Input when we are adding the search back
+import { Layout, Avatar, Menu } from "antd"; //import Input when we are adding the search back
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import "./userLayout.styles.less";
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 const { Item, SubMenu } = Menu;
 
 export const UserLayout = () => {
@@ -57,10 +57,7 @@ export const UserLayout = () => {
             justifyContent: "center",
             borderBottom: "1px solid rgba(222, 222, 222, 0.98)",
           }}
-        >
-          <p icon={<UserOutlined />}>20</p>
-          <p icon={<UserOutlined />}>200</p>
-        </div>
+        ></div>
         <div>
           <Menu mode="inline" defaultSelectedKeys={1}>
             <Item icon={<ShoppingOutlined />} key={1}>
@@ -70,38 +67,34 @@ export const UserLayout = () => {
             <Item icon={<AccountBookOutlined />}>
               <Link to="/accounts">Account</Link>
             </Item>
-
-            <Item icon={<LineChartOutlined />}>Insight</Item>
-            <SubMenu title="Help & Feedback" icon={<QuestionCircleOutlined />}>
-              <Item icon={<MailOutlined />}>Contact us</Item>
-              <Item icon={<FileSearchOutlined />}>FAQ</Item>
-            </SubMenu>
-            <Item icon={<LoginOutlined />}>Log out</Item>
+            <Item icon={<LoginOutlined />}>
+              <Link to="/login">Log out</Link>
+            </Item>
           </Menu>
         </div>
       </Sider>
       <Layout>
-        <Header
+        {/* <Header
           style={{
             backgroundColor: "white",
-            display: "flex",
+            display: "hidden",
             flexDirection: "row",
             justifyContent: "right",
           }}
         >
-          {/* <div>
+          <div>
             <Input
               size="large"
               placeholder="Search products"
               prefix={<SearchOutlined />}
             />
-          </div> */}
+          </div>
           <div>
             <Button type="primary" style={{ backgroundColor: "#0055D4" }}>
               <Link to="/addproduct">Create Product</Link>
             </Button>
           </div>
-        </Header>
+        </Header> */}
         <Content style={{ backgroundColor: "white" }}>
           <div>
             <Outlet />
