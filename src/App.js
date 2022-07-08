@@ -9,6 +9,7 @@ import { ProductPage } from "./components/new-product-page/new-product-file";
 import { ProductDetails } from "./components/product-details/product-details";
 import { SignUp } from "./components/signUp/SignUp";
 import { Login } from "./components/signUp/Login";
+import { AccountPage } from "./components/account/AccountPage";
 import CreateNewProduct from "./components/createproduct/CreateNewProduct";
 import EditProduct from "./components/createproduct/EditProduct";
 import { useState } from "react";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/product-details" element={<ProductDetails />} />
           <Route path="/addproduct" element={<CreateNewProduct />} />
           <Route path="/editproduct" element={<EditProduct />} />
+          <Route path="/accounts" element={<AccountPage />} />
         </Route>
         <Route path="precious/product/:id" element={<BuyerProductDetails />} />
         <Route path="/order_summary_delivery" element={<OrderSummary />} />
